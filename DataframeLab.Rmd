@@ -55,8 +55,6 @@ Now you can ask some interesting questions about the dataset:
 - What was the mean grant value?
 
 ```{r}
-is.numeric(grants$total_amount)
-
 mean_grant <- mean(grants$total_amount, na.rm = TRUE)
 print(mean_grant)
 ```
@@ -65,21 +63,25 @@ print(mean_grant)
 - What was the dollar amount of the largest grant?
 
 ```{r}
-
+max_grant <- max(grants$total_amount, na.rm = TRUE)
+print(format(max_grant, scientific = FALSE))
 ```
 
 
 - What was the dollar amount of the smallest grant?
 
 ```{r}
-
+small_grant <- min(grants$total_amount, na.rm = TRUE)
+print(small_grant)
 ```
 
 
 - Which organization received the largest grant?
 
 ```{r}
-
+max_grant <- max(grants$total_amount, na.rm = TRUE)
+largest_org <- grants$organization[grants$total_amount== max_grant]
+print(largest_org)
 
 ```
 
@@ -87,19 +89,23 @@ print(mean_grant)
 - Which organization received the smallest grant?
 
 ```{r}
-
+small_grant <- min(grants$total_amount, na.rm = TRUE)
+smallest_org <- grants$organization[grants$total_amount== small_grant]
+print(smallest_org)
 ```
 
 - How many grants were awarded in 2010?
 
 ```{r}
-
+grants_awarded <- sum(grants$start_year == "2010", na.rm = TRUE)
+print(grants_awarded)
 ```
 
 - How much was awarded in 2010? 
 
 ```{r}
-
+total_awarded <- sum(grants$total_amount[grants$start_year == "2010"], na.rm = TRUE)
+print(total_awarded)
 ```
 
 
