@@ -1,6 +1,6 @@
 ---
 title: "Dataframes - In Class lab"
-author: "Dr. Shoemaker"
+author: "Carlos Gonzalez"
 date: "DATA 2401"
 output: html_document
 ---
@@ -30,7 +30,7 @@ Because you're in an RProject, you don't need to set your working directory in R
 - Use the glimpse function to look at the loaded data
 
 ```{r}
-
+grants <- read_csv("gates_donations.csv")
 
 ```
 
@@ -192,3 +192,10 @@ Hint: use the `sapply()` function to apply your function to a vector of years
 ```{r}
 
 ```
+
+
+```{r}
+
+
+```
+
