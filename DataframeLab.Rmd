@@ -30,7 +30,7 @@ Because you're in an RProject, you don't need to set your working directory in R
 - Use the glimpse function to look at the loaded data
 
 ```{r}
-grants <- read_csv("gates_donations.csv")
+view(grants)
 
 ```
 
@@ -38,7 +38,7 @@ grants <- read_csv("gates_donations.csv")
 - Create a variable `org` that contains the `organization` column of the dataset
 
 ```{r}
-
+org <- grants$organization
 
 ```
 
@@ -46,8 +46,7 @@ grants <- read_csv("gates_donations.csv")
 - Confirm that the "organization" column is a vector using the `is.vector()` function. (This is a useful debugging tip if you hit errors later!)
 
 ```{r}
-
-
+is.vector(org)
 ```
 
 
@@ -56,7 +55,10 @@ Now you can ask some interesting questions about the dataset:
 - What was the mean grant value?
 
 ```{r}
+is.numeric(grants$total_amount)
 
+mean_grant <- mean(grants$total_amount, na.rm = TRUE)
+print(mean_grant)
 ```
 
 
